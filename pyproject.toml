@@ -1,0 +1,103 @@
+[project]
+name = "wow"
+version = "0.1.0"
+description = "A software library that speeds up software engineers to complete their daily jobs."
+readme = "README.md"
+keywords = ["wow", "cli", "mcp"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Information Technology",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.10",
+]
+requires-python = ">=3.10"
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+issues = "https://github.com/exactml/wow/issues"
+repository = "https://github.com/exactml/wow"
+
+# -----------
+# tool: ruff
+# -----------
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+required-version = "0.12.12"
+force-exclude = false
+extend-include = ["*.ipynb"]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 88
+
+[tool.ruff.lint]
+select = [
+  "F",         # rule-group: Pyflakes
+  "E",         # rule-group: pycodestyle-errors
+  "W",         # rule-group: pycodestyle-warning
+  "I",         # rule-group: isort
+  "S",         # rule-group: security
+  "C4",        # rule-group: flake8-comprehensions
+  "T20",       # rule-group: flake8-print
+  "B006",      # https://docs.astral.sh/ruff/rules/mutable-argument-default/
+  "B015",      # https://docs.astral.sh/ruff/rules/useless-comparison/
+  "D209",      # https://docs.astral.sh/ruff/rules/new-line-after-last-paragraph/
+  "N804",      # https://docs.astral.sh/ruff/rules/invalid-first-argument-name-for-class-method/
+  "ERA001",    # https://docs.astral.sh/ruff/rules/commented-out-code/#commented-out-code-era001
+  "DTZ003",    # https://docs.astral.sh/ruff/rules/call-datetime-utcnow/
+  "ISC001",    # https://docs.astral.sh/ruff/rules/single-line-implicit-string-concatenation/
+  "PIE790",    # https://docs.astral.sh/ruff/rules/unnecessary-placeholder/
+  "PLW1508",   # https://docs.astral.sh/ruff/rules/invalid-envvar-default/
+  "PYI024",    # https://docs.astral.sh/ruff/rules/collections-named-tuple/
+  "RET504",    # https://docs.astral.sh/ruff/rules/unnecessary-assign/
+  "RUF002",    # https://docs.astral.sh/ruff/rules/ambiguous-unicode-character-docstring/
+  "RUF003",    # https://docs.astral.sh/ruff/rules/ambiguous-unicode-character-comment/
+  "RUF010",    # https://docs.astral.sh/ruff/rules/explicit-f-string-type-conversion/
+  "RUF013",    # https://docs.astral.sh/ruff/rules/implicit-optional/
+  "RUF100",    # https://docs.astral.sh/ruff/rules/unused-noqa/
+  "SIM101",    # https://docs.astral.sh/ruff/rules/duplicate-isinstance-call/
+  "SIM108",    # https://docs.astral.sh/ruff/rules/if-else-block-instead-of-if-exp/
+  "SIM114",    # https://docs.astral.sh/ruff/rules/if-with-same-arms/
+  "SIM115",    # https://docs.astral.sh/ruff/rules/open-file-with-context-handler/
+  "SIM210",    # https://docs.astral.sh/ruff/rules/if-expr-with-true-false/
+  "SIM910",    # https://docs.astral.sh/ruff/rules/dict-get-with-none-default/
+  "TID251",    # https://docs.astral.sh/ruff/rules/banned-api/
+  "TID252",    # https://docs.astral.sh/ruff/rules/relative-imports/
+  "TRY203",    # https://docs.astral.sh/ruff/rules/useless-try-except/
+  "UP004",     # https://docs.astral.sh/ruff/rules/useless-object-inheritance/
+  "UP006",     # https://docs.astral.sh/ruff/rules/non-pep585-annotation/
+  "UP007",     # https://docs.astral.sh/ruff/rules/non-pep604-annotation-union/
+  "UP008",     # https://docs.astral.sh/ruff/rules/super-call-with-parameters/
+  "UP012",     # https://docs.astral.sh/ruff/rules/unnecessary-encode-utf8/
+  "UP015",     # https://docs.astral.sh/ruff/rules/redundant-open-modes/
+  "UP030",     # https://docs.astral.sh/ruff/rules/format-literals/
+  "UP031",     # https://docs.astral.sh/ruff/rules/printf-string-formatting/
+  "UP034",     # https://docs.astral.sh/ruff/rules/extraneous-parentheses/
+  "UP045",     # https://docs.astral.sh/ruff/rules/non-pep604-annotation-optional/
+]
+ignore = [
+  "E402",      # https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file/
+  "E741",      # https://docs.astral.sh/ruff/rules/ambiguous-variable-name/
+  "S101",      # https://docs.astral.sh/ruff/rules/assert/
+]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# -----------
+# tool: typos
+# -----------
+
+[tool.typos.default.extend-words]
+mape = "mape"
+yhat = "yhat"
