@@ -1,0 +1,6 @@
+vcs:
+  type: git
+  organization: null
+  conventions:
+    client:
+      pattern: null
